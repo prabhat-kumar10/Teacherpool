@@ -12,11 +12,13 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <span className="icon">
-              {/* <CodeIcon /> */}
-            </span>
+            <div className="icon">
+              <img
+                data-ux="Image"
+                src="//img1.wsimg.com/isteam/ip/a0fb218c-b6ac-43bb-8f77-eaa26520a828/Logo_Teacher%20Pool.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25"
+              />
+            </div>
             <span>Teacher Pool</span>
-            {/* <i className="fas fa-code"></i> */}
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -34,17 +36,6 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Contact Us
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink
-                exact
                 to="/Register"
                 activeClassName="active"
                 className="nav-links"
@@ -55,8 +46,6 @@ function NavBar() {
             </li>
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-            {/* <i className={click ? "fas fa-times" : "fas fa-bars"}></i> */}
-
             {!click ? (
               <span className="icon">
                 <HamburgetMenuOpen />{" "}
