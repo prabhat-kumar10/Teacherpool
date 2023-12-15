@@ -6,7 +6,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 12px;
     color: white;
     border-bottom: 2px solid #293241;
@@ -101,7 +101,7 @@
 .ft-list-items li {
     margin: 24px 0;
     font-family: 'Rubik', sans-serif;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     letter-spacing: .8px;
 }

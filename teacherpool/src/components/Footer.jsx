@@ -1,17 +1,17 @@
 import React from "react";
 import "./Footer.css";
-// import SubscribeNewsletter from "./SubscribeNewsletter";
+import logo from "../images/teacherpool-logo.svg"
 
 function Footer() {
   return (
     <div className="footer-section">
       <div className="footer-container">
-            <div className="ft-title">
-              <div className="ft-sign">
-                <img data-ux="Image" src="//img1.wsimg.com/isteam/ip/a0fb218c-b6ac-43bb-8f77-eaa26520a828/Logo_Teacher%20Pool.png/:/cr=t:0%25,l:0%25,w:100%25,h:100%25" />
-              </div>
-              Teacher Pool
-            </div>
+        <div className="ft-title">
+          <div className="ft-sign">
+            <img src={logo} alt="" />
+          </div>
+          Teacher Pool
+        </div>
 
         <div className="ft-list" id="contact">
           <p className="ft-list-title">Contact Us</p>
@@ -42,7 +42,7 @@ function Footer() {
       </div>
 
       <div className="ft-copyright">
-        <p>Copyright © 2023 Teacher Pool - All rights reserved.</p>
+        <p>Copyright © 2023 Teacher Pool. All rights reserved.</p>
 
         <ul className="ft-social-links">
           <li>
