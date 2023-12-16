@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
-import { CodeIcon, HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
+import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
+import { useAuth } from "../AuthContext";
 
 function NavBar() {
   const [click, setClick] = useState(false);
+  const { isAuthenticated, logout, user } = useAuth();
 
   const handleClick = () => setClick(!click);
+
   return (
     <>
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <span className="icon">
-              {/* <CodeIcon /> */}
-            </span>
+            <span className="icon"></span>
             <span>Teacher Pool</span>
-            {/* <i className="fas fa-code"></i> */}
           </NavLink>
 
           <ul className={click ? "nav-menu active" : "nav-menu"}>
@@ -42,21 +42,58 @@ function NavBar() {
                 Contact Us
               </NavLink>
             </li>
-            <li className="nav-item">
-              <NavLink
-                exact
-                to="/Register"
-                activeClassName="active"
-                className="nav-links"
-                onClick={handleClick}
-              >
-                Register
-              </NavLink>
-            </li>
+            {isAuthenticated ? (
+              <>
+                <li className="nav-item">
+                  <li>
+                    <li className="nav-item">
+                    </li>
+                    <NavLink
+                      exact
+                      to="/"
+                      activeClassName="active"
+                      className="nav-links"
+                      onClick={() => {
+                        handleClick();
+                        logout();
+                      }}
+                    >
+                      Sign Out
+                    </NavLink>
+                  </li>
+                </li>
+                <li className="nav-item">
+                  <span className="logininfo">{`Welcome ${user?.fullname}`}</span>
+                </li>
+              </>
+            ) : (
+              <>
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/login"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    Login
+                  </NavLink>
+                </li>
+                <li className="nav-item">
+                  <NavLink
+                    exact
+                    to="/signup"
+                    activeClassName="active"
+                    className="nav-links"
+                    onClick={handleClick}
+                  >
+                    Signup
+                  </NavLink>
+                </li>
+              </>
+            )}
           </ul>
           <div className="nav-icon" onClick={handleClick}>
-            {/* <i className={click ? "fas fa-times" : "fas fa-bars"}></i> */}
-
             {!click ? (
               <span className="icon">
                 <HamburgetMenuOpen />{" "}

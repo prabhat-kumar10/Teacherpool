@@ -10,7 +10,7 @@ function Footer() {
           <div className="ft-info-p1">
             <p className="ft-title">
               {/* <span className="ft-sign">+</span> */}
-              Tracher Pool
+              Teacher Pool
             </p>
           </div>
         </div>
