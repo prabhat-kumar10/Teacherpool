@@ -3,6 +3,8 @@ import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
 import { useAuth } from "../AuthContext";
+import Jobopenings from "../screens/Jobopenings"
+import Blogs from "../screens/Blogs"
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -34,12 +36,23 @@ function NavBar() {
             <li className="nav-item">
               <NavLink
                 exact
-                to="/contact"
+                to="/jobopenings"
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
-                Contact Us
+                Job Openings
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                exact
+                to="/blogs"
+                activeClassName="active"
+                className="nav-links"
+                onClick={handleClick}
+              >
+                Blogs
               </NavLink>
             </li>
             {isAuthenticated ? (
