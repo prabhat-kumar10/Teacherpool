@@ -17,9 +17,11 @@ import experts from "../images/experts.svg";
 import "./Home.css";
 
 const Home = () => {
+
   const handleSetActive = (to) => {
     console.log(to);
   };
+
   return (
     <>
       <NavBar />
@@ -234,3 +236,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

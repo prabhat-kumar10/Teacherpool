@@ -6,9 +6,11 @@ function Footer() {
   return (
     <div className="footer-section">
       <div className="footer-container">
+
         <div className="ft-title">
           <div className="ft-sign">
             <img src={logo} alt="" />
+
           </div>
           Teacher Pool
         </div>

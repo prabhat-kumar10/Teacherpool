@@ -1,0 +1,97 @@
+.container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #283048, #859398);
+    color: #fff;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.loginphoto{
+    width: 500px;
+    margin-right: 10%;
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+}
+
+h1{
+    color: #333;
+    font-family: "Trirong", serif;
+}
+
+h3 {
+    color: #007bff;
+}
+
+.mb-3 {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #007bff;
+    background: transparent;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.form-control:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+.custom-checkbox {
+    margin-top: 15px;
+    width: 100%;
+}
+
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    margin-top: 15px;
+    text-align: center;
+    color: #333;
+}
+
+@media (max-width: 600px) {
+    form {
+        max-width: 100%;
+    }
+}
