@@ -2,9 +2,13 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 import { HamburgetMenuClose, HamburgetMenuOpen } from "./Icons";
+
 import { useAuth } from "../AuthContext";
 import Jobopenings from "../screens/Jobopenings"
 import Blogs from "../screens/Blogs"
+
+import logo from "../images/teacherpool-logo.svg"
+
 
 function NavBar() {
   const [click, setClick] = useState(false);
@@ -17,7 +21,11 @@ function NavBar() {
       <nav className="navbar">
         <div className="nav-container">
           <NavLink exact to="/" className="nav-logo">
-            <span className="icon"></span>
+
+            <div className="icon">
+              <img src={logo} alt="" />
+            </div>
+
             <span>Teacher Pool</span>
           </NavLink>
 
@@ -37,11 +45,13 @@ function NavBar() {
               <NavLink
                 exact
                 to="/jobopenings"
+
                 activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
               >
                 Job Openings
+
               </NavLink>
             </li>
             <li className="nav-item">
