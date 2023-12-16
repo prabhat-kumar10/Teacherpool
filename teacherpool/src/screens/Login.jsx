@@ -48,7 +48,7 @@ const Login = () => {
     return (
         <>
             <NavBar/>
-            <div className="container">
+            <div className="Logincontainer">
                 <img src={Loginphoto} alt="loginphoto" className="loginphoto"/>
                 <form onSubmit={handleSubmit} action="/signup" method="POST">
                     <h1>Welcome to Teacher Pool</h1>
