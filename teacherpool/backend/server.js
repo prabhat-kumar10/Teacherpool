@@ -3,6 +3,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 require("./db/connection.js");
 const User=require("./db/user.js")
+const SchoolInfo=require('./db/jobOpening.js')
 const cors=require("cors")
 
 //enable cors
@@ -48,6 +49,25 @@ app.post('/login',async(req,res)=>{
    }
    catch(error){
       res.status(500).json({error:"Login failed"});
+   }
+})
+
+//add job opening
+app.post('/add_job',async(req,res)=>{
+   try{
+   
+      const{school_name,job_openings,photo_url,location,contact}=req.body;
+      const opening=new SchoolInfo({school_name,job_openings,photo_url,location,contact});
+      await opening.save();
+      // console.log(opening);
+      res.status(200).json({
+         job: opening,
+         status: "200",
+         message: "new job added successfully",
+       });
+
+   } catch(error){
+      res.status(500).json({error:"error in adding job opening"});
    }
 })
 
