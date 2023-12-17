@@ -1,16 +1,14 @@
 import React from "react";
-import "./Footer.css";
-import logo from "../images/teacherpool-logo.svg"
+import "../styles/Footer.css";
+import logo from "../assets/teacherpool-logo.svg";
 
 function Footer() {
   return (
     <div className="footer-section">
       <div className="footer-container">
-
         <div className="ft-title">
           <div className="ft-sign">
             <img src={logo} alt="" />
-
           </div>
           Teacher Pool
         </div>

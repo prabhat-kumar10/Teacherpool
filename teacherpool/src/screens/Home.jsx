@@ -1,23 +1,22 @@
 import React from "react";
-import { Link, Element, Button } from "react-scroll";
+import { Link, Element } from "react-scroll";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-import herobanner from "../images/herobanner.jpeg";
-import services from "../images/services.jpg";
-import handbook from "../images/handbook.svg";
-import onboarding from "../images/onboarding.svg";
-import hiring from "../images/hiring.svg";
-import interview from "../images/interview.svg";
-import time from "../images/time.svg";
-import web_devices from "../images/web_devices.svg";
-import social_dashboard from "../images/social_dashboard.svg";
-import personalization from "../images/personalization.svg";
-import absorbed from "../images/absorbed.svg";
-import experts from "../images/experts.svg";
-import "./Home.css";
+import herobanner from "../assets/herobanner.jpeg";
+import services from "../assets/services.jpg";
+import handbook from "../assets/handbook.svg";
+import onboarding from "../assets/onboarding.svg";
+import hiring from "../assets/hiring.svg";
+import interview from "../assets/interview.svg";
+import time from "../assets/time.svg";
+import web_devices from "../assets/web_devices.svg";
+import social_dashboard from "../assets/social_dashboard.svg";
+import personalization from "../assets/personalization.svg";
+import absorbed from "../assets/absorbed.svg";
+import experts from "../assets/experts.svg";
+import "../styles/Home.css";
 
 const Home = () => {
-
   const handleSetActive = (to) => {
     console.log(to);
   };
@@ -236,5 +235,3 @@ const Home = () => {
 };
 
 export default Home;
-
-

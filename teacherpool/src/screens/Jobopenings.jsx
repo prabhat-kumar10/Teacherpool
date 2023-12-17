@@ -1,9 +1,15 @@
 import React from 'react'
+import NavBar from '../components/NavBar'
+import Footer from '../components/Footer'
 
 const Jobopenings = () => {
   return (
-    <div>Jobopenings</div>
+    <>
+      <NavBar />
+      <div>Openings</div>
+      <Footer />
+    </>
   )
 }
 
-export default Jobopenings
+export default Jobopenings;

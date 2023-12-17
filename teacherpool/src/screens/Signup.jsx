@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
-import NavBar from '../components/NavBar'
-import "../styles/Signupstyle.css"
-import { Link,useNavigate} from "react-router-dom"
+import React, { useState } from "react";
+import NavBar from "../components/NavBar";
+import "../styles/Signupstyle.css";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Signupphoto from "../photos/Signupphoto.svg"
- 
+import Signupphoto from "../assets/Signupphoto.svg";
+
 const Signup = () => {
-
-
   const [fullname, setfullname] = useState("");
   const [phone, setphone] = useState("");
   const [email, setemail] = useState("");
@@ -15,23 +13,27 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8000/signup', {fullname,phone,email,password});
-      console.log(response.data);
+      const response = await axios.post("http://localhost:8000/signup", {
+        fullname,
+        phone,
+        email,
+        password,
+      });
+      // console.log(response.data);
       alert("Signed Up Successfully");
       navigate("/login");
-    }
-    catch (error) {
-      console.log('Sign up error', error);
+    } catch (error) {
+      alert("Sign up error");
+      console.log("Sign up error", error);
     }
     setemail("");
     setpassword("");
     setfullname("");
     setphone("");
-  }
+  };
 
   return (
     <>
@@ -90,10 +92,10 @@ const Signup = () => {
             Already registered? <Link to="/login">Login</Link>
           </p>
         </form>
-        <img src={Signupphoto} alt="Signupphoto" className="Signupphoto"/>
+        <img src={Signupphoto} alt="Signupphoto" className="Signupphoto" />
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
