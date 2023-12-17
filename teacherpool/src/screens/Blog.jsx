@@ -71,7 +71,7 @@ const Blogs = () => {
               return (
                 <Card
                   image={blog.featuredImage}
-                  date={blog.date}
+                  date={blog.date.substring(0, 10)}
                   title={blog.title}
                   content={blog.content}
                   categories={blog.categories}
@@ -81,7 +81,7 @@ const Blogs = () => {
           : data.map((blog) => (
               <Card
                 image={blog.featuredImage}
-                date={blog.date}
+                date={blog.date.substring(0, 10)}
                 title={blog.title}
                 content={blog.content}
                 categories={blog.categories}
