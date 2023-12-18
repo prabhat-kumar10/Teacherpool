@@ -1,8 +1,10 @@
+import Footer from '../components/Footer'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import NavBar from '../components/NavBar';
 import '../styles/Jobopeningstyle.css';
 import { useAuth } from "../AuthContext";
+
 
 const Jobopenings = () => {
   const [jobOpenings, setJobOpenings] = useState([]);
@@ -64,6 +66,7 @@ const Jobopenings = () => {
   return (
     <>
       <NavBar />
+
       <div className="search-bar">
         <input
           type="text"
@@ -107,5 +110,6 @@ const Jobopenings = () => {
     </>
   );
 };
+
 
 export default Jobopenings;
