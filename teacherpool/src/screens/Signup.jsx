@@ -22,7 +22,7 @@ const Signup = () => {
         email,
         password,
       });
-      // console.log(response.data);
+      console.log(response.data.email);
       alert("Signed Up Successfully");
       navigate("/login");
     } catch (error) {

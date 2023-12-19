@@ -25,7 +25,7 @@ const Login = () => {
         password,
       });
 
-      const { success, message, user } = response.data;
+      const { message, user } = response.data;
       // console.log(response.data);
 
       if (message === "Login Successful") {

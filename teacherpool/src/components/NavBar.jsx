@@ -70,12 +70,12 @@ function NavBar() {
                     Sign Out
                   </Link>
                 </li>
-                {/* <li className="nav-item">
+                <li className="nav-item">
                   <span className="logininfo">
                     {""}
                     {`Welcome ${user?.fullname}`}{" "}
                   </span>
-                </li> */}
+                </li>
               </>
             ) : (
               <>
