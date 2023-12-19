@@ -68,17 +68,7 @@ const Blogs = () => {
         </div>
         {data.length > 0 && searchInput.length > 1
           ? filteredResults.map((blog) => {
-              return (
-                <Card
-                  image={blog.featuredImage}
-                  date={blog.date.substring(0, 10)}
-                  title={blog.title}
-                  content={blog.content}
-                  categories={blog.categories}
-                />
-              );
-            })
-          : data.map((blog) => (
+            return (
               <Card
                 image={blog.featuredImage}
                 date={blog.date.substring(0, 10)}
@@ -86,7 +76,17 @@ const Blogs = () => {
                 content={blog.content}
                 categories={blog.categories}
               />
-            ))}
+            );
+          })
+          : data.map((blog) => (
+            <Card
+              image={blog.featuredImage}
+              date={blog.date.substring(0, 10)}
+              title={blog.title}
+              content={blog.content}
+              categories={blog.categories}
+            />
+          ))}
       </div>
       <Footer />
     </>

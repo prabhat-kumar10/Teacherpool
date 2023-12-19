@@ -81,6 +81,26 @@ app.get('/get_job_openings', async (req, res) => {
    }
 });
 
+app.patch('/remove_job',async(req,res)=>{
+   const {organizationName, title, applyUrl } = req.body;
+   console.log(req.body);
+   try {
+      // Find and remove the job based on all properties
+      const deletedJob = await JobRole.findOneAndDelete({
+         organizationName, title, applyUrl 
+      });
+  
+      if (!deletedJob) {
+        return res.status(404).json({ message: 'Job not found' });
+      }
+  
+      return res.status(200).json({ message: 'Job removed successfully' });
+    } catch (error) {
+      console.error('Error removing job:', error);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+})
+
 app.listen(port, () => {
    console.log("server is listening");
 })
