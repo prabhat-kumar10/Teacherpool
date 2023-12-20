@@ -15,7 +15,9 @@ const Card = (props) => {
           </span>
           <h5>{props.title}</h5>
           <div className="card-para">{props.content}</div>
-          <span className="card-btn"> Continue reading -> </span>
+          <a href="/f/looking-forward-to-dusshera-break-how-teachers-should-utilize-it">
+            <span className="card-btn"> Continue reading -> </span>
+          </a>
         </Link>
       </div>
     </>
