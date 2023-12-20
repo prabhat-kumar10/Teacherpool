@@ -20,7 +20,7 @@ const Login = () => {
     setallEntry([...allEntry, newEntry]);
 
     try {
-      const response = await axios.post("http://localhost:8000/login", {
+      const response = await axios.post("https://teacherpool-u1m9.onrender.com/login", {
         email,
         password,
       });

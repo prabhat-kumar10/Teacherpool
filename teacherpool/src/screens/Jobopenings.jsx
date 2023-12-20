@@ -28,7 +28,7 @@ const Jobopenings = () => {
     const fetchJobOpenings = async () => {
       try {
         const response = await axios.get(
-          "http://localhost:8000/get_job_openings"
+          "https://teacherpool-u1m9.onrender.com/get_job_openings"
         );
         setJobOpenings(response.data);
       } catch (error) {
@@ -52,7 +52,7 @@ const Jobopenings = () => {
     try {
       // Fetch the original job openings data from the server
       const response = await axios.get(
-        "http://localhost:8000/get_job_openings"
+        "https://teacherpool-u1m9.onrender.com/get_job_openings"
       );
       const originalJobOpenings = response.data;
 
@@ -91,8 +91,7 @@ const Jobopenings = () => {
 
   const handleRemoveJob = async (jobOpening) => {
     try {
-      console.log("hello nikhil");
-      await axios.patch("http://localhost:8000/remove_job", {
+      await axios.patch("https://teacherpool-u1m9.onrender.com/remove_job", {
         organizationName: jobOpening.organizationName,
         title: jobOpening.title,
         applyUrl: jobOpening.applyUrl,
@@ -111,7 +110,7 @@ const Jobopenings = () => {
   const handleSaveJob = async () => {
     try {
       // Implement API request to save the new job
-      await axios.post("http://localhost:8000/add_job", newJob);
+      await axios.post("https://teacherpool-u1m9.onrender.com/add_job", newJob);
       setShowAddJobPopup(false);
       setNewJob({
         title: "",
@@ -128,7 +127,7 @@ const Jobopenings = () => {
       });
       // Fetch updated job openings after adding a new job
       const response = await axios.get(
-        "http://localhost:8000/get_job_openings"
+        "https://teacherpool-u1m9.onrender.com/get_job_openings"
       );
       setJobOpenings(response.data);
     } catch (error) {
