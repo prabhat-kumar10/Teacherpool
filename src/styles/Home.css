@@ -1,0 +1,120 @@
+.herobanner {
+    width: auto;
+    height: auto;
+    background-color: #39597b;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.herobanner img {
+    max-width: 85%;
+    max-height: 85%;
+    margin-bottom: 20px;
+}
+
+.herobanner h1 {
+    color: white;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-shadow: 2px 2px 5px #000000;
+    margin: 30px 0;
+}
+
+.herobanner span {
+    color: aliceblue;
+    font-size: 25px;
+    width: 70%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-contact {
+    background-color: white;
+    padding: 15px;
+    font-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    color: #39597b;
+    margin: 30px 0;
+}
+
+.btn-contact:hover {
+    background-color: antiquewhite;
+}
+
+.services {
+    margin: 0 0 30px 0;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.services h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #39597b;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    margin: 0 0 20px;
+}
+
+.services h1:before,
+.services h1:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 50%;
+    height: 2px;
+    content: "\a0";
+    background-color: #39597b;
+}
+
+.services h1:before {
+    margin-left: -50%;
+    text-align: right;
+}
+
+.services img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 20px;
+}
+
+@import url("https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css");
+@import url("https://unpkg.com/bs-brain@2.0.3/components/services/service-5/assets/css/service-5.css");
+@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css");
+
+.why-us h1 {
+    margin-top: 3rem;
+}
+
+.box {
+    height: 270px;
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-content {
+    position: absolute;
+    bottom: 0;
+    margin: 0 20px;
+}
+
+.box-content h4 {
+    color: #39597b;
+}
+
+.box img {
+    max-width: 60%;
+    max-height: 60%;
+}
