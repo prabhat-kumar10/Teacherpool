@@ -1,226 +1,200 @@
-/* General styling for the job openings container */
 .job-openings-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    background-color: hsl(211, 20%, 70%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: hsl(211, 20%, 70%);
 }
 
-/* Styling for the search bar */
 .search-bar {
-    margin: 1rem 25%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+  margin: 1rem 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
-/* Styling for the search input */
 input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #8a5cd9;
-    border-radius: 10px;
-    margin-right: 8px;
-    font-size: 16px;
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #8a5cd9;
+  border-radius: 10px;
+  margin-right: 8px;
+  font-size: 16px;
 }
 
-/* Styling for the search button */
 .searchbarbutton {
-    background-color: #4caf50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    /* font-size: 16px; */
-    margin-left: 3%;
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-left: 3%;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
 
-/* Styling for each individual job opening */
 .job-opening {
-    /* text-align: center; */
-    box-sizing: border-box;
-    /* width: 50%; */
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    padding: 16px;
-    transition: transform 0.3s ease-in-out;
-    background-color: #fff;
-    overflow: hidden;
+  box-sizing: border-box;
+  width: 45%;
+  margin: 20px 0;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 16px;
+  transition: transform 0.2s ease-in-out;
+  background-color: #fff;
+  overflow: hidden;
 }
 
 .job-opening:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the image container */
 .image-container {
-    margin-bottom: 12px;
-    overflow: hidden;
-    object-fit: fill;
+  height: 250px;
+  margin-bottom: 12px;
+  overflow: hidden;
+  object-fit: fill;
 }
 
-/* Styling for the job opening image */
-img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 8px;
+.image-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
 }
 
-/* Styling for the Apply button */
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .applybutton {
-    background-color: #4caf50;
-    color: white;
-    padding: 8px;
-    border: none;
-    cursor: pointer;
-    margin-top: 8px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease-in-out;
+  background-color: #4caf50;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
 }
 
-button:hover {
-    background-color: #45a049;
+.applybutton:hover {
+  background-color: #45a049;
 }
 
-/* AddJobForm.css */
+.remove-button {
+  border: none;
+  background-color: rgb(192, 9, 9);
+  color: white;
+  border-radius: 5px;
+}
+
+.remove-button:hover {
+  background-color: rgb(209, 18, 18);
+}
 
 .add-job-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px; /* Adjust margin as needed */
-  }
-  
-  .add-job-button {
-    background-color: #3498db; /* Button background color */
-    color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    font-weight: bold;
-  }
-  
-  .add-job-button:hover {
-    background-color: #2980b9; /* Button background color on hover */
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-job-button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: bold;
+}
+
+.add-job-button:hover {
+  background-color: #2980b9;
+}
 
 .add-job-popup {
-    margin-top: 6%;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #2c3e50; /* Dark background color */
-    color: white;
-    padding: 20px;
-    border: 1px solid #34495e; /* Border color */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width: 50%; /* Adjust the width as needed */
-    max-height: 80vh; /* Maximum height with 80% of the viewport height */
-    overflow-y: auto; /* Enable vertical scrolling when content overflows */
-  }
-  
-  .close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    color: rgb(220, 244, 172);
-    font-size: 30px;
-  }
-  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  border: 1px solid #34495e;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 50%;
+  max-height: 80vh;
+  overflow: auto;
+}
 
-  .close-button:hover {
-    color: #ecf0f1; /* Change color on hover */
-  }
-  
-  .addjobtitle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 200%;
-    font-weight: bold;
-  }
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: rgb(220, 244, 172);
+  font-size: 30px;
+}
 
-  .add-job-popup label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-  }
-  
-  .add-job-popup input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #34495e; /* Input border color */
-    border-radius: 4px;
-    background-color: #34495e; /* Input background color */
-    color: white;
-  }
 
-  .savejobbuttonstyle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .save-job-button {
+.close-button:hover {
+  color: #ecf0f1;
+}
 
-    background-color: #3498db; /* Button background color */
-    color: white;
-    padding: 12px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .save-job-button:hover {
-    background-color: #2980b9; /* Button background color on hover */
-  }
-  
+.addjobtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 200%;
+  font-weight: bold;
+}
+
+.add-job-popup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.add-job-popup input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+  border: 1px solid #34495e;
+  border-radius: 4px;
+  background-color: #34495e;
+  color: white;
+}
+
+.savejobbuttonstyle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.save-job-button {
+  background-color: #3498db;
+  color: white;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.save-job-button:hover {
+  background-color: #2980b9;
+}
 
 /* Media query for screens smaller than 768px (phones) */
-@media screen and (max-width: 768px) {
-    .job-opening {
-        width: calc(100% - 16px); /* Full width for phones */
-        margin: 2%;
-    }
-}
-
-/* Media query for screens between 768px and 1024px (laptops) */
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-    .job-opening {
-        width: calc(33% - 16px); /* Display three in one line for laptops */
-    }
-}
-
-/* Media query for screens larger than 1024px (desktops) */
-@media screen and (min-width: 1025px) {
-    .job-opening {
-        width: calc(33% - 16px); /* Adjust width for desktops */
-        margin-right: 0; /* Reset margin for desktops */
-    }
-}
-
-/* Media query for screens larger than 1200px */
-@media screen and (min-width: 1200px) {
-    .job-opening {
-        width: calc(33% - 16px);
-    }
+@media screen and (max-width: 600px) {
+  .job-opening {
+    width: 90%;
+  }
 }

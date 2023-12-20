@@ -1,12 +1,12 @@
 .blog-body {
 	background-color: hsl(211, 20%, 70%);
-	padding: 1rem 3rem;
+	padding: 0 5%;
 }
 
 .search-box {
 	margin-bottom: 10px;
 	display: flex;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	align-items: center;
 }
 

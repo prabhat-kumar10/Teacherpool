@@ -7,20 +7,20 @@ import { useAuth } from "../AuthContext";
 
 const Jobopenings = () => {
   const [jobOpenings, setJobOpenings] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
   const [showAddJobPopup, setShowAddJobPopup] = useState(false);
   const [newJob, setNewJob] = useState({
-    title: '',
-    role: '',
+    title: "",
+    role: "",
     experience: 0,
-    qualification: '',
-    skills: '',
-    additionalRequirements: '',
-    location: '',
-    remunerationAndBenefits: '',
-    organizationName: '',
-    photoUrl: '',
-    applyUrl: '',
+    qualification: "",
+    skills: "",
+    additionalRequirements: "",
+    location: "",
+    remunerationAndBenefits: "",
+    organizationName: "",
+    photoUrl: "",
+    applyUrl: "",
   });
   const { isAuthenticated, user } = useAuth();
 
@@ -42,9 +42,8 @@ const Jobopenings = () => {
   const handleApply = (applyUrl) => {
     // Open the applyUrl in a new tab
     if (isAuthenticated) {
-      window.open(applyUrl, '_blank');
-    }
-    else {
+      window.open(applyUrl, "_blank");
+    } else {
       alert("Login first and then Apply for job");
     }
   };
@@ -79,7 +78,7 @@ const Jobopenings = () => {
   };
 
   const isAdmin = () => {
-    return isAuthenticated && user.email.endsWith('@teacherpool.in');
+    return isAuthenticated && user.email.endsWith("@teacherpool.in");
   };
 
   const handleOpenAddJobForm = () => {
@@ -90,12 +89,10 @@ const Jobopenings = () => {
     setShowAddJobPopup(false);
   };
 
-
-
   const handleRemoveJob = async (jobOpening) => {
     try {
-      console.log("hello nikhil")
-      await axios.patch('http://localhost:8000/remove_job', {
+      console.log("hello nikhil");
+      await axios.patch("http://localhost:8000/remove_job", {
         organizationName: jobOpening.organizationName,
         title: jobOpening.title,
         applyUrl: jobOpening.applyUrl,
@@ -108,48 +105,49 @@ const Jobopenings = () => {
       );
       setJobOpenings(updatedJobOpenings);
     } catch (error) {
-      console.error('Error removing job frontend:', error);
+      console.error("Error removing job frontend:", error);
     }
   };
   const handleSaveJob = async () => {
     try {
       // Implement API request to save the new job
-      await axios.post('http://localhost:8000/add_job', newJob);
+      await axios.post("http://localhost:8000/add_job", newJob);
       setShowAddJobPopup(false);
       setNewJob({
-        title: '',
-        role: '',
+        title: "",
+        role: "",
         experience: 0,
-        qualification: '',
-        skills: '',
-        additionalRequirements: '',
-        location: '',
-        remunerationAndBenefits: '',
-        organizationName: '',
-        photoUrl: '',
-        applyUrl: '',
+        qualification: "",
+        skills: "",
+        additionalRequirements: "",
+        location: "",
+        remunerationAndBenefits: "",
+        organizationName: "",
+        photoUrl: "",
+        applyUrl: "",
       });
       // Fetch updated job openings after adding a new job
-      const response = await axios.get('http://localhost:8000/get_job_openings');
+      const response = await axios.get(
+        "http://localhost:8000/get_job_openings"
+      );
       setJobOpenings(response.data);
     } catch (error) {
-      console.error('Error saving job:', error);
+      console.error("Error saving job:", error);
     }
   };
 
   return (
     <>
       <NavBar />
-      {isAdmin() && (
-        <div className='add-job-button-container'>
-          <button className="add-job-button" onClick={handleOpenAddJobForm}>
-            Add Job Role Here
-          </button>
-        </div>
-      )}
-
 
       <div className="job-openings-container">
+        {isAdmin() && (
+          <div className="add-job-button-container">
+            <button className="add-job-button" onClick={handleOpenAddJobForm}>
+              Add Job Role Here
+            </button>
+          </div>
+        )}
         <div className="search-bar">
           <input
             type="text"
@@ -183,27 +181,29 @@ const Jobopenings = () => {
               <strong>Remuneration and Benefits:</strong>{" "}
               {jobOpening.remunerationAndBenefits} <br />
             </p>
-            <button
-              className="applybutton"
-              onClick={() => handleApply(jobOpening.applyUrl)}
-            >
-              Apply
-            </button>
-            {isAdmin() && (
+            <div className="btn-container">
               <button
-                className="remove-button"
-                onClick={() => handleRemoveJob(jobOpening)}
+                className="applybutton"
+                onClick={() => handleApply(jobOpening.applyUrl)}
               >
-                Remove
+                Apply
               </button>
-            )}
+              {isAdmin() && (
+                <button
+                  className="remove-button"
+                  onClick={() => handleRemoveJob(jobOpening)}
+                >
+                  Remove
+                </button>
+              )}
+            </div>
           </div>
         ))}
       </div>
 
       {showAddJobPopup && (
         <div className="add-job-popup">
-          <p className='addjobtitle'>ADD JOB DESCRIPTION</p>
+          <p className="addjobtitle">ADD JOB DESCRIPTION</p>
           <span className="close-button" onClick={handleCloseAddJobForm}>
             &times;
           </span>
@@ -225,14 +225,18 @@ const Jobopenings = () => {
           <input
             type="number"
             value={newJob.experience}
-            onChange={(e) => setNewJob({ ...newJob, experience: e.target.value })}
+            onChange={(e) =>
+              setNewJob({ ...newJob, experience: e.target.value })
+            }
           />
 
           <label>Qualification *:</label>
           <input
             type="text"
             value={newJob.qualification}
-            onChange={(e) => setNewJob({ ...newJob, qualification: e.target.value })}
+            onChange={(e) =>
+              setNewJob({ ...newJob, qualification: e.target.value })
+            }
           />
 
           <label>Skills *:</label>
@@ -246,7 +250,9 @@ const Jobopenings = () => {
           <input
             type="text"
             value={newJob.additionalRequirements}
-            onChange={(e) => setNewJob({ ...newJob, additionalRequirements: e.target.value })}
+            onChange={(e) =>
+              setNewJob({ ...newJob, additionalRequirements: e.target.value })
+            }
           />
 
           <label>Location *:</label>
@@ -260,14 +266,18 @@ const Jobopenings = () => {
           <input
             type="text"
             value={newJob.remunerationAndBenefits}
-            onChange={(e) => setNewJob({ ...newJob, remunerationAndBenefits: e.target.value })}
+            onChange={(e) =>
+              setNewJob({ ...newJob, remunerationAndBenefits: e.target.value })
+            }
           />
 
           <label>Organization Name *:</label>
           <input
             type="text"
             value={newJob.organizationName}
-            onChange={(e) => setNewJob({ ...newJob, organizationName: e.target.value })}
+            onChange={(e) =>
+              setNewJob({ ...newJob, organizationName: e.target.value })
+            }
           />
 
           <label>Photo URL:</label>
@@ -283,13 +293,15 @@ const Jobopenings = () => {
             value={newJob.applyUrl}
             onChange={(e) => setNewJob({ ...newJob, applyUrl: e.target.value })}
           />
-          <div className='savejobbuttonstyle'>
+          <div className="savejobbuttonstyle">
             <button className="save-job-button" onClick={handleSaveJob}>
               Save Job
             </button>
           </div>
         </div>
       )}
+
+      <Footer />
     </>
   );
 };
