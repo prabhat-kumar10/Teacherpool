@@ -107,6 +107,7 @@ const Jobopenings = () => {
       console.error("Error removing job frontend:", error);
     }
   };
+
   const handleSaveJob = async () => {
     try {
       // Implement API request to save the new job
@@ -140,13 +141,6 @@ const Jobopenings = () => {
       <NavBar />
 
       <div className="job-openings-container">
-        {isAdmin() && (
-          <div className="add-job-button-container">
-            <button className="add-job-button" onClick={handleOpenAddJobForm}>
-              Add Job Role Here
-            </button>
-          </div>
-        )}
         <div className="search-bar">
           <input
             type="text"
@@ -166,38 +160,50 @@ const Jobopenings = () => {
                 alt={jobOpening.organizationName}
               />
             </div>
-            <p>
-              <strong>Organization Name:</strong> {jobOpening.organizationName}{" "}
-              <br />
-              <strong>Title:</strong> {jobOpening.title} <br />
-              <strong>Role:</strong> {jobOpening.role} <br />
-              <strong>Experience:</strong> {jobOpening.experience} years <br />
-              <strong>Qualification:</strong> {jobOpening.qualification} <br />
-              <strong>Skills:</strong> {jobOpening.skills} <br />
-              <strong>Additional Requirements:</strong>{" "}
-              {jobOpening.additionalRequirements} <br />
-              <strong>Location:</strong> {jobOpening.location} <br />
-              <strong>Remuneration and Benefits:</strong>{" "}
-              {jobOpening.remunerationAndBenefits} <br />
-            </p>
-            <div className="btn-container">
-              <button
-                className="applybutton"
-                onClick={() => handleApply(jobOpening.applyUrl)}
-              >
-                Apply
-              </button>
-              {isAdmin() && (
+            <div className="job-content">
+              <p>
+                <strong>Organization:</strong>{" "}
+                {jobOpening.organizationName} <br />
+                <strong>Title:</strong> {jobOpening.title} <br />
+                <strong>Role:</strong> {jobOpening.role} <br />
+                <strong>Experience:</strong> {jobOpening.experience} years{" "}
+                <br />
+                <strong>Qualification:</strong> {jobOpening.qualification}{" "}
+                <br />
+                <strong>Skills:</strong> {jobOpening.skills} <br />
+                <strong>Additional Requirements:</strong>{" "}
+                {jobOpening.additionalRequirements} <br />
+                <strong>Location:</strong> {jobOpening.location} <br />
+                <strong>Remuneration and Benefits:</strong>{" "}
+                {jobOpening.remunerationAndBenefits} <br />
+              </p>
+              <div className="btn-container">
                 <button
-                  className="remove-button"
-                  onClick={() => handleRemoveJob(jobOpening)}
+                  className="applybutton"
+                  onClick={() => handleApply(jobOpening.applyUrl)}
                 >
-                  Remove
+                  Apply
                 </button>
-              )}
+                {isAdmin() && (
+                  <button
+                    className="remove-button"
+                    onClick={() => handleRemoveJob(jobOpening)}
+                  >
+                    Remove
+                  </button>
+                )}
+              </div>
             </div>
           </div>
         ))}
+
+        {isAdmin() && (
+          <div className="add-job-button-container">
+            <button className="add-job-button" onClick={handleOpenAddJobForm}>
+              Add Job
+            </button>
+          </div>
+        )}
       </div>
 
       {showAddJobPopup && (

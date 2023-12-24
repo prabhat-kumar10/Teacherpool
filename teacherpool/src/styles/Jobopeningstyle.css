@@ -32,7 +32,7 @@ input {
   margin-left: 3%;
 }
 
-button:hover {
+.searchbarbutton:hover {
   background-color: #45a049;
 }
 
@@ -40,9 +40,8 @@ button:hover {
   box-sizing: border-box;
   width: 45%;
   margin: 20px 0;
-  border: 1px solid #ccc;
   border-radius: 15px;
-  padding: 16px;
+  padding: 12px;
   transition: transform 0.2s ease-in-out;
   background-color: #fff;
   overflow: hidden;
@@ -57,13 +56,11 @@ button:hover {
   height: 250px;
   margin-bottom: 12px;
   overflow: hidden;
-  object-fit: fill;
 }
 
 .image-container img {
   width: 100%;
   height: 100%;
-  border-radius: 8px;
 }
 
 .btn-container {
@@ -85,24 +82,25 @@ button:hover {
 
 .remove-button {
   border: none;
-  background-color: rgb(192, 9, 9);
+  background-color: rgb(209, 18, 18);
   color: white;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 8px;
 }
 
 .remove-button:hover {
-  background-color: rgb(209, 18, 18);
+  background-color: rgb(192, 9, 9);
 }
 
 .add-job-button-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
+  width: 45%;
+  margin: 20px 0;
 }
 
 .add-job-button {
-  background-color: #3498db;
+  background-color: #004d80;
   color: white;
   padding: 12px 15px;
   border: none;
@@ -179,7 +177,7 @@ button:hover {
 }
 
 .save-job-button {
-  background-color: #3498db;
+  background-color: #438cbc;
   color: white;
   padding: 12px 15px;
   border: none;
@@ -192,9 +190,52 @@ button:hover {
   background-color: #2980b9;
 }
 
-/* Media query for screens smaller than 768px (phones) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1050px) {
   .job-opening {
     width: 90%;
+    display: flex;
+    padding: 0;
+    margin: 10px 0;
+  }
+
+  .image-container {
+    height: auto;
+    width: 30%;
+    max-width: 30%;
+    margin: 0px;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .job-content {
+    width: 70%;
+    padding: 10px;
+  }
+}
+
+/* Media query for screens smaller than 768px (phones) */
+@media screen and (max-width: 768px) {
+  .job-opening {
+    flex-direction: column;
+    padding: 8px;
+  }
+
+  .image-container {
+    height: 200px;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .job-content {
+    width: 100%;
+    padding: 10px;
   }
 }

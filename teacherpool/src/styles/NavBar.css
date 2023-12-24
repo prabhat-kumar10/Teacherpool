@@ -1,6 +1,6 @@
 .navbar {
 	background-color: #1f5156;
-	height: 80px;
+	height: 70px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -10,17 +10,17 @@
 	z-index: 20;
 }
 
-.logininfo {
-	color: pink;
-}
-
 .nav-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	width: 100%;
 	max-width: 1500px;
-	position: relative;
+}
+
+.logininfo {
+	color: pink;
+	display: none;
 }
 
 .nav-logo,
@@ -30,11 +30,15 @@
 	display: flex;
 	cursor: pointer;
 	text-decoration: none;
-	font-size: 2rem;
+	font-size: 2.2rem;
 	font-weight: 500;
 	flex-grow: 1;
 	align-items: center;
 	justify-items: center;
+}
+
+.nav-logo span {
+	margin-left: 0.5rem;
 }
 
 .nav-logo .icon {
@@ -44,7 +48,8 @@
 }
 
 .icon {
-	margin-right: 5px;
+	border-radius: 5px;
+	overflow: hidden;
 }
 
 .nav-menu {
@@ -98,14 +103,59 @@
 	height: 2rem;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1050px) {
+	.navbar {
+		font-size: 1rem;
+	}
+
+	.nav-logo,
+	.nav-logo:hover {
+		font-size: 35px;
+	}
+	
+	.nav-logo .icon {
+		width: 45px;
+		height: 45px;
+	}
+	
+	.nav-links,
+	.nav-links:hover {
+		padding: 0.5rem 0.8rem;
+	}
+	
+	.nav-item {
+		margin-right: 1rem;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.navbar {
+		height: 50px;
+		padding: 0;
+	}
+
+	.nav-logo,
+	.nav-logo:hover {
+		margin-left: 0;
+		font-size: 25px;
+	}
+	
+	.nav-logo .icon {
+		width: 32px;
+		height: 32px;
+	}
+
+	.nav-logo span {
+		margin-left: 0.2rem;
+	}
+
 	.nav-menu {
 		display: flex;
 		flex-direction: column;
 		width: 100%;
 		border-top: 1px solid #fff;
 		position: absolute;
-		top: 80px;
+		top: 50px;
 		left: -110%;
 		opacity: 1;
 		transition: all 0.5s ease;
@@ -125,7 +175,6 @@
 	}
 
 	.nav-links {
-		padding: 1.5rem;
 		width: 100%;
 		display: table;
 	}
@@ -140,5 +189,9 @@
 		height: 2rem;
 		cursor: pointer;
 		color: #ffdd40;
+	}
+
+	.logininfo {
+		display: block;
 	}
 }

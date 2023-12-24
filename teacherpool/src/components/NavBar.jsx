@@ -72,8 +72,7 @@ function NavBar() {
                 </li>
                 <li className="nav-item">
                   <span className="logininfo">
-                    {""}
-                    {`Welcome ${user?.fullname}`}{" "}
+                    {`Welcome ${user?.fullname}`}
                   </span>
                 </li>
               </>
