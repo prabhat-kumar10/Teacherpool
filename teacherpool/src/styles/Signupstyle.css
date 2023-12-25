@@ -75,8 +75,13 @@
 	color: #333;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
+	.Signupphoto {
+		display: none;
+	}
+
 	.signup-form {
+		margin: 20px;
 		max-width: 100%;
 	}
 }
