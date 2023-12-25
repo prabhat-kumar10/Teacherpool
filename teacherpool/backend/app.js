@@ -5,6 +5,7 @@ require("./db/connection.js");
 const User = require("./db/user.js")
 const JobRole = require('./db/jobOpening.js')
 const cors = require("cors")
+const bcrypt = require("bcryptjs");
 
 //enable cors
 app.use(cors());
@@ -28,7 +29,6 @@ app.post('/signup', async (req, res) => {
    }
 })
 
-
 //Login
 app.post('/login', async (req, res) => {
    try {
@@ -39,24 +39,29 @@ app.post('/login', async (req, res) => {
          return res.status(401).json({ message: "Email is not correct" });
       }
 
-      if (user.password !== password) {
+      // if (user.password !== password) {
+      //    return res.status(401).json({ message: "Password is not correct" });
+      // }
+
+      // res.status(200).json({ message: "Login Successful", user });
+      const isPasswordMatch = await bcrypt.compare(password, user.password);
+      if (!isPasswordMatch) {
          return res.status(401).json({ message: "Password is not correct" });
       }
 
-      res.status(200).json({ message: "Login Successful", user });
+        res.status(200).json({ message: "Login Successful", user });
    }
    catch (error) {
       res.status(500).json({ error: "Login failed" });
    }
 })
 
-
 //add job opening
 app.post('/add_job', async (req, res) => {
    try {
 
-      const { title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl,applyUrl } = req.body;
-      const opening = new JobRole({ title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl,applyUrl });
+      const { title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl, applyUrl } = req.body;
+      const opening = new JobRole({ title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl, applyUrl });
       await opening.save();
       // console.log(opening);
       res.status(200).json({
@@ -70,7 +75,6 @@ app.post('/add_job', async (req, res) => {
    }
 })
 
-
 app.get('/get_job_openings', async (req, res) => {
    try {
       const jobOpenings = await JobRole.find(); // Assuming SchoolInfo is your Mongoose model
@@ -81,24 +85,24 @@ app.get('/get_job_openings', async (req, res) => {
    }
 });
 
-app.patch('/remove_job',async(req,res)=>{
-   const {organizationName, title, applyUrl } = req.body;
+app.patch('/remove_job', async (req, res) => {
+   const { organizationName, title, applyUrl } = req.body;
    console.log(req.body);
    try {
       // Find and remove the job based on all properties
       const deletedJob = await JobRole.findOneAndDelete({
-         organizationName, title, applyUrl 
+         organizationName, title, applyUrl
       });
-  
+
       if (!deletedJob) {
-        return res.status(404).json({ message: 'Job not found' });
+         return res.status(404).json({ message: 'Job not found' });
       }
-  
+
       return res.status(200).json({ message: 'Job removed successfully' });
-    } catch (error) {
+   } catch (error) {
       console.error('Error removing job:', error);
       return res.status(500).json({ message: 'Internal server error' });
-    }
+   }
 })
 
 app.listen(port, () => {
