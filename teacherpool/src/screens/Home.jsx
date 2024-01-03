@@ -52,7 +52,7 @@ const Home = () => {
                 <div className="row">
                   <div className="col-12 col-xl-11">
                     <img src={services} alt={"Services"} />
-                    <h2 className="display-5 mb-3 mb-xl-4">
+                    <h2 className="text-center display-5 mb-3 mb-xl-4">
                       We are giving you perfect solutions with our proficient
                       services.
                     </h2>

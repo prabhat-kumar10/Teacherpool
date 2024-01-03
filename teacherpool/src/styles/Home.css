@@ -11,7 +11,6 @@
 
 .herobanner img {
     max-width: 85%;
-    max-height: 85%;
     margin-bottom: 20px;
 }
 
@@ -20,6 +19,7 @@
     font-family: Georgia, "Times New Roman", Times, serif;
     text-shadow: 2px 2px 5px #000000;
     margin: 30px 0;
+    text-align: center;
 }
 
 .herobanner span {
@@ -92,6 +92,10 @@
 @import url("https://unpkg.com/bs-brain@2.0.3/components/services/service-5/assets/css/service-5.css");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css");
 
+.card-body {
+    color: #39597b !important;
+}
+
 .why-us h1 {
     margin-top: 3rem;
 }
@@ -117,4 +121,32 @@
 .box img {
     max-width: 60%;
     max-height: 60%;
+}
+
+@media (max-width: 768px) {
+    .herobanner {
+        padding: 8px;
+    }
+
+    .herobanner img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .herobanner h1 {
+        text-shadow: 1px 1px 1px #000000;
+        margin: 10px 0;
+        font-size: 25px;
+    }
+
+    .herobanner span {
+        font-size: 15px;
+        width: 90%;
+        margin: 0;
+    }
+
+    .btn-contact {
+        padding: 10px;
+        font-size: 15px;
+    }
 }

@@ -48,8 +48,7 @@ app.post('/login', async (req, res) => {
       if (!isPasswordMatch) {
          return res.status(401).json({ message: "Password is not correct" });
       }
-
-        res.status(200).json({ message: "Login Successful", user });
+      res.status(200).json({ message: "Login Successful", user });
    }
    catch (error) {
       res.status(500).json({ error: "Login failed" });
@@ -59,7 +58,6 @@ app.post('/login', async (req, res) => {
 //add job opening
 app.post('/add_job', async (req, res) => {
    try {
-
       const { title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl, applyUrl } = req.body;
       const opening = new JobRole({ title, role, experience, qualification, skills, additionalRequirements, location, remunerationAndBenefits, organizationName, photoUrl, applyUrl });
       await opening.save();
@@ -69,7 +67,6 @@ app.post('/add_job', async (req, res) => {
          status: "200",
          message: "new job added successfully",
       });
-
    } catch (error) {
       res.status(500).json({ error: "error in adding job opening" });
    }
@@ -93,11 +90,9 @@ app.patch('/remove_job', async (req, res) => {
       const deletedJob = await JobRole.findOneAndDelete({
          organizationName, title, applyUrl
       });
-
       if (!deletedJob) {
          return res.status(404).json({ message: 'Job not found' });
       }
-
       return res.status(200).json({ message: 'Job removed successfully' });
    } catch (error) {
       console.error('Error removing job:', error);
