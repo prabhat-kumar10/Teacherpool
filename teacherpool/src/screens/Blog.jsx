@@ -37,8 +37,7 @@ const Blogs = () => {
     fetchData();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
-  if (error) return <div>Error!</div>;
+  if (error) return <h1>Error!</h1>;
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
@@ -58,36 +57,40 @@ const Blogs = () => {
   return (
     <>
       <NavBar />
-      <div className="blog-body">
-        <div className="search-box">
-          <span>Blogs from Teacher Pool</span>
-          <input
-            placeholder="Search..."
-            onChange={(e) => searchItems(e.target.value)}
-          />
-        </div>
-        {data.length > 0 && searchInput.length > 1
-          ? filteredResults.map((blog) => {
-            return (
-              <Card
-                image={blog.featuredImage}
-                date={blog.date.substring(0, 10)}
-                title={blog.title}
-                content={blog.content}
-                categories={blog.categories}
-              />
-            );
-          })
-          : data.map((blog) => (
-            <Card
-              image={blog.featuredImage}
-              date={blog.date.substring(0, 10)}
-              title={blog.title}
-              content={blog.content}
-              categories={blog.categories}
+      {loading ? (
+        <h1 className="loading">Loading...</h1>
+      ) : (
+        <div className="blog-body">
+          <div className="search-box">
+            <span>Blogs from Teacher Pool</span>
+            <input
+              placeholder="Search..."
+              onChange={(e) => searchItems(e.target.value)}
             />
-          ))}
-      </div>
+          </div>
+          {data.length > 0 && searchInput.length > 1
+            ? filteredResults.map((blog) => {
+                return (
+                  <Card
+                    image={blog.featuredImage}
+                    date={blog.date.substring(0, 10)}
+                    title={blog.title}
+                    content={blog.content}
+                    categories={blog.categories}
+                  />
+                );
+              })
+            : data.map((blog) => (
+                <Card
+                  image={blog.featuredImage}
+                  date={blog.date.substring(0, 10)}
+                  title={blog.title}
+                  content={blog.content}
+                  categories={blog.categories}
+                />
+              ))}
+        </div>
+      )}
       <Footer />
     </>
   );

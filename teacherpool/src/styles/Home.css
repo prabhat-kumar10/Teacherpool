@@ -9,9 +9,15 @@
     padding: 20px;
 }
 
-.herobanner img {
-    max-width: 85%;
-    margin-bottom: 20px;
+.herobanner-img {
+    width: 85%;
+    height: auto;
+    overflow: hidden;
+}
+
+.herobanner-img img {
+    width: 100%;
+    height: 100%;
 }
 
 .herobanner h1 {
@@ -92,8 +98,8 @@
 @import url("https://unpkg.com/bs-brain@2.0.3/components/services/service-5/assets/css/service-5.css");
 @import url("https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css");
 
-.card-body {
-    color: #39597b !important;
+.card-body-1 {
+    color: #39597b;
 }
 
 .why-us h1 {
@@ -128,19 +134,25 @@
         padding: 8px;
     }
 
-    .herobanner img {
-        max-width: 100%;
-        margin-bottom: 10px;
+    .herobanner-img {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .herobanner-img img {
+        width: 100%;
+        height: 100%;
     }
 
     .herobanner h1 {
         text-shadow: 1px 1px 1px #000000;
         margin: 10px 0;
-        font-size: 25px;
+        font-size: 30px;
     }
 
     .herobanner span {
-        font-size: 15px;
+        font-size: 20px;
         width: 90%;
         margin: 0;
     }

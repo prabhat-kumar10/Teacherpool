@@ -26,7 +26,9 @@ const Home = () => {
       <NavBar />
 
       <div className="herobanner">
-        <img src={herobanner} alt={"Introduction"} />
+        <div className="herobanner-img">
+          <img src={herobanner} alt={"Introduction"} />
+        </div>
         <h1>Search Talent for your School</h1>
         <span>
           Looking for Teaching, Non Teaching and Administrative staffs for your
@@ -74,7 +76,7 @@ const Home = () => {
                 <div className="row gy-4">
                   <div className="col-12 col-sm-6">
                     <div className="card border-0 border-bottom border-primary shadow-sm">
-                      <div className="card-body text-center p-4 p-xxl-5">
+                      <div className="card-body-1 text-center p-4 p-xxl-5">
                         <img src={hiring} alt={"Hiring"} />
                         <h4 className="mb-4">Teaching/Non Teaching Hiring</h4>
                         <p className="mb-4 text-secondary">
@@ -89,7 +91,7 @@ const Home = () => {
                   </div>
                   <div className="col-12 col-sm-6">
                     <div className="card border-0 border-bottom border-primary shadow-sm">
-                      <div className="card-body text-center p-4 p-xxl-5">
+                      <div className="card-body-1 text-center p-4 p-xxl-5">
                         <img src={onboarding} alt={"Onboarding"} />
                         <h4 className="mb-4">
                           Employee On Boarding Assistance
@@ -105,7 +107,7 @@ const Home = () => {
                   </div>
                   <div className="col-12 col-sm-6">
                     <div className="card border-0 border-bottom border-primary shadow-sm">
-                      <div className="card-body text-center p-4 p-xxl-5">
+                      <div className="card-body-1 text-center p-4 p-xxl-5">
                         <img src={handbook} alt={"Handbook"} />
                         <h4 className="mb-4">Employee Handbook</h4>
                         <p className="mb-4 text-secondary">
@@ -120,7 +122,7 @@ const Home = () => {
                   </div>
                   <div className="col-12 col-sm-6">
                     <div className="card border-0 border-bottom border-primary shadow-sm">
-                      <div className="card-body text-center p-4 p-xxl-5">
+                      <div className="card-body-1 text-center p-4 p-xxl-5">
                         <img src={interview} alt={"interview"} />
                         <h4 className="mb-4">Exit Interview</h4>
                         <p className="mb-4 text-secondary">
@@ -147,7 +149,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={absorbed} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Client-Centric</h4>
                     <p>
                       Understanding the client, evaluating their requirements
@@ -160,7 +162,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={experts} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Professionalism and Dedication</h4>
                     <p>
                       Our commitment to professionalism ensures dedicated
@@ -173,7 +175,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={time} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Expat Recruitment Services</h4>
                     <p>
                       Specializing in recruiting international talent, we offer
@@ -186,7 +188,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={social_dashboard} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Marketing of your Organization</h4>
                     <p>
                       We enhance your organization's visibility through
@@ -199,7 +201,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={personalization} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Customized Service Models</h4>
                     <p>
                       Tailoring our services to your unique needs, we provide
@@ -212,7 +214,7 @@ const Home = () => {
               <div className="col-sm-6 col-lg-4">
                 <div className="box">
                   <img src={web_devices} alt="" />
-                  <div className="box-content">
+                  <div className="text-center box-content">
                     <h4>Tech-Driven Solutions</h4>
                     <p>
                       We employ cutting-edge technology for a streamlined and

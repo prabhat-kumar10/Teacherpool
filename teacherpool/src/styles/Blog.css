@@ -1,10 +1,18 @@
+.loading {
+	height: 70vh;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
 .blog-body {
 	background-color: hsl(211, 20%, 70%);
-	padding: 0 5%;
+	padding: 5px 5%;
 }
 
 .search-box {
-	margin-bottom: 10px;
+	margin: 10px -10px;
 	display: flex;
 	justify-content: space-evenly;
 	align-items: center;
@@ -12,16 +20,14 @@
 
 .search-box span {
 	font-size: 40px;
-	margin-left: -10px;
+	padding-right: 20px;
 	color: #39597b;
 	font-family: cursive;
 	font-weight: 800;
 }
 
 .search-box input {
-	float: inline-end;
 	padding: 10px 15px;
-	width: 30%;
 	max-width: 300px;
 	min-width: 100px;
 	border: none;
@@ -31,4 +37,11 @@
 .search-box input::placeholder {
 	font-weight: 500px;
 	font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .search-box span {
+		font-size: 25px;
+		padding-right: 10px;
+	}
 }
