@@ -147,14 +147,13 @@
 
     .herobanner h1 {
         text-shadow: 1px 1px 1px #000000;
-        margin: 10px 0;
+        margin: 20px 0;
         font-size: 30px;
     }
 
     .herobanner span {
         font-size: 20px;
         width: 90%;
-        margin: 0;
     }
 
     .btn-contact {
