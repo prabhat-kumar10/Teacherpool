@@ -15,11 +15,6 @@ const Signup = () => {
 
   const navigate = useNavigate();
 
-  const emailVarification = (val) => {
-    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(email);
-  }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword){
@@ -30,9 +25,6 @@ const Signup = () => {
     }
     else if (phone.length !== 10) {
       alert("Phone number must be of 10 digits!");
-    }
-    else if (emailVarification(email) === false) {
-      alert("Incorrect email!");
     }
     else {
       try {
